@@ -12,7 +12,6 @@ public class Main {
         int day;
         int steps;
         int monthStat;
-        int goal = 10000;
 
         while (command != 0) {
 
@@ -47,7 +46,7 @@ public class Main {
                 monthStat = scanner.nextInt();
                 System.out.println("\nСтатистика за "+ monthStat +" месяц");
                 if (monthStat >= 1 && monthStat <= 12){
-                     stepTracker.stepStats(goal, monthStat);
+                     stepTracker.stepStats(stepTracker.goal, monthStat);
                 }else {
                     System.out.println("Некоректный ввод, введите от 1 до 12");
                     continue;
@@ -55,7 +54,9 @@ public class Main {
 
             } else if (command == 3) {
                 System.out.println("Выбранно - Изменить цель по количеству шагов в день");
-                stepTracker.goalStat(goal);
+                System.out.println("Актуальная цель - " + stepTracker.goal);
+                stepTracker.goalStat();
+
             } else {
                 System.out.println("Такого действия нет!");
             }
