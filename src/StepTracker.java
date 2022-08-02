@@ -22,14 +22,14 @@ public class StepTracker {
     public int goalStat() {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Введите количество шагов:");
+        System.out.println("Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ С€Р°РіРѕРІ:");
         goal = scanner.nextInt();
         if (goal > 0){
-            System.out.println("Цель обновлена - " + goal);
+            System.out.println("Р¦РµР»СЊ РѕР±РЅРѕРІР»РµРЅР° - " + goal);
             return goal;
         }
         else {
-            System.out.println("Введено некорректное значение! Цель не изменена.");
+            System.out.println("Р’РІРµРґРµРЅРѕ РЅРµРєРѕСЂСЂРµРєС‚РЅРѕРµ Р·РЅР°С‡РµРЅРёРµ! Р¦РµР»СЊ РЅРµ РёР·РјРµРЅРµРЅР°.");
             return 10000;
         }
     }
@@ -42,7 +42,7 @@ public class StepTracker {
         Converter converter = new Converter();
 
         for (int j = 0; j < MonthData[neededMonth].length; j++){
-            System.out.println((j + 1)+" день: "+ MonthData[neededMonth-1][j]+ " шагов");
+            System.out.println((j + 1)+" РґРµРЅСЊ: "+ MonthData[neededMonth-1][j]+ " С€Р°РіРѕРІ");
             sum += MonthData[neededMonth-1][j];
             if (MonthData[neededMonth-1][j] > maxValue){
                 maxValue = MonthData[neededMonth-1][j];
@@ -54,12 +54,12 @@ public class StepTracker {
         if (counter == 0){
             counter = 1;
         }
-        System.out.println("\n Дополнительная статистика:");
-        System.out.println("-Сумма за месяц: "+ sum +" шагов");
-        System.out.println("-Максимальное количество за месяц: " + maxValue+ " шагов");
-        System.out.println("-Среднее количество: " + (sum / counter)+ " шагов");
+        System.out.println("\n Р”РѕРїРѕР»РЅРёС‚РµР»СЊРЅР°СЏ СЃС‚Р°С‚РёСЃС‚РёРєР°:");
+        System.out.println("-РЎСѓРјРјР° Р·Р° РјРµСЃСЏС†: "+ sum +" С€Р°РіРѕРІ");
+        System.out.println("-РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ Р·Р° РјРµСЃСЏС†: " + maxValue+ " С€Р°РіРѕРІ");
+        System.out.println("-РЎСЂРµРґРЅРµРµ РєРѕР»РёС‡РµСЃС‚РІРѕ: " + (sum / counter)+ " С€Р°РіРѕРІ");
         converter.stepStatsTwo(sum);
-        System.out.println("-Лучшая серия: " + goalEpisode(goal, neededMonth)+ " дн(ей/я).\n");
+        System.out.println("-Р›СѓС‡С€Р°СЏ СЃРµСЂРёСЏ: " + goalEpisode(goal, neededMonth)+ " РґРЅ(РµР№/СЏ).\n");
     }
 
     public int goalEpisode(int goal, int neededMonth){

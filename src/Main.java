@@ -16,62 +16,62 @@ public class Main {
         while (command != 0) {
 
             if (command == 1) {
-                System.out.println("Ââåäèòå ìåñÿö:");
+                System.out.println("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¼ÐµÑÑÑ†:");
                 month = scanner.nextInt();
                 if (month >= 1 && month <= 12) {
-                    System.out.println("Ââåäèòå äåíü:");
+                    System.out.println("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð´ÐµÐ½ÑŒ:");
                     day = scanner.nextInt();
                     if (day >= 1 && day <= 30) {
-                        System.out.println("Ââåäèòå êîëè÷åñòâî øàãîâ:");
+                        System.out.println("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑˆÐ°Ð³Ð¾Ð²:");
                         steps = scanner.nextInt();
                     } else {
-                        System.out.println("Íåâåðíîå çíà÷åíèå! (Ââåäèòå ÷èñëî îò 1 äî 30)");
+                        System.out.println("ÐÐµÐ²ÐµÑ€Ð½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ! (Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð¾Ñ‚ 1 Ð´Ð¾ 30)");
                         continue;
                     }
 
                 } else {
-                    System.out.println("Íåâåðíîå çíà÷åíèå! (Ââåäèòå ÷èñëî îò 1 äî 12)");
+                    System.out.println("ÐÐµÐ²ÐµÑ€Ð½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ! (Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ñ‡Ð¸ÑÐ»Ð¾ Ð¾Ñ‚ 1 Ð´Ð¾ 12)");
                     continue;
                 }
 
                 boolean isSuccess = stepTracker.addSteps(stepTracker.MonthData, month, day, steps);
                 if (isSuccess) {
-                    System.out.println("Øàãè çàïèñàíû!");
+                    System.out.println("Ð¨Ð°Ð³Ð¸ Ð·Ð°Ð¿Ð¸ÑÐ°Ð½Ñ‹!");
                 } else {
-                    System.out.println("Øàãè â ýòîò äåíü óæå çàïîëíåíû!");
+                    System.out.println("Ð¨Ð°Ð³Ð¸ Ð² ÑÑ‚Ð¾Ñ‚ Ð´ÐµÐ½ÑŒ ÑƒÐ¶Ðµ Ð·Ð°Ð¿Ð¾Ð»Ð½ÐµÐ½Ñ‹!");
                 }
 
             } else if (command == 2) {
-                System.out.println("Ââåäèòå íîìåð ìåñÿöà:");
+                System.out.println("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð¼ÐµÑÑÑ†Ð°:");
                 monthStat = scanner.nextInt();
-                System.out.println("\nÑòàòèñòèêà çà "+ monthStat +" ìåñÿö");
+                System.out.println("\nÐ¡Ñ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÐ° Ð·Ð° "+ monthStat +" Ð¼ÐµÑÑÑ†");
                 if (monthStat >= 1 && monthStat <= 12){
                      stepTracker.stepStats(stepTracker.goal, monthStat);
                 }else {
-                    System.out.println("Íåêîðåêòíûé ââîä, ââåäèòå îò 1 äî 12");
+                    System.out.println("ÐÐµÐºÐ¾Ñ€ÐµÐºÑ‚Ð½Ñ‹Ð¹ Ð²Ð²Ð¾Ð´, Ð²Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð¾Ñ‚ 1 Ð´Ð¾ 12");
                     continue;
                 }
 
             } else if (command == 3) {
-                System.out.println("Âûáðàííî - Èçìåíèòü öåëü ïî êîëè÷åñòâó øàãîâ â äåíü");
-                System.out.println("Àêòóàëüíàÿ öåëü - " + stepTracker.goal);
+                System.out.println("Ð’Ñ‹Ð±Ñ€Ð°Ð½Ð½Ð¾ - Ð˜Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ñ†ÐµÐ»ÑŒ Ð¿Ð¾ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ñƒ ÑˆÐ°Ð³Ð¾Ð² Ð² Ð´ÐµÐ½ÑŒ");
+                System.out.println("ÐÐºÑ‚ÑƒÐ°Ð»ÑŒÐ½Ð°Ñ Ñ†ÐµÐ»ÑŒ - " + stepTracker.goal);
                 stepTracker.goalStat();
 
             } else {
-                System.out.println("Òàêîãî äåéñòâèÿ íåò!");
+                System.out.println("Ð¢Ð°ÐºÐ¾Ð³Ð¾ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ Ð½ÐµÑ‚!");
             }
             printMenu();
             command = scanner.nextInt();
         }
-        System.out.println("Ïðîãðàììà çàâåðøåíà");
+        System.out.println("ÐŸÑ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ð° Ð·Ð°Ð²ÐµÑ€ÑˆÐµÐ½Ð°");
     }
 
     private static void printMenu() {
-        System.out.println("Ìåíþ:");
-        System.out.println("1. Ââåñòè êîëè÷åñòâî øàãîâ çà îïðåäåë¸ííûé äåíü");
-        System.out.println("2. Íàïå÷àòàòü ñòàòèñòèêó çà îïðåäåë¸ííûé ìåñÿö");
-        System.out.println("3. Èçìåíèòü öåëü ïî êîëè÷åñòâó øàãîâ â äåíü");
-        System.out.println("0. Âûéòè èç ïðèëîæåíèÿ");
-        System.out.println("Ââåäèòå íîìåð äåéñòâèÿ: ");
+        System.out.println("ÐœÐµÐ½ÑŽ:");
+        System.out.println("1. Ð’Ð²ÐµÑÑ‚Ð¸ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ð¾ ÑˆÐ°Ð³Ð¾Ð² Ð·Ð° Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»Ñ‘Ð½Ð½Ñ‹Ð¹ Ð´ÐµÐ½ÑŒ");
+        System.out.println("2. ÐÐ°Ð¿ÐµÑ‡Ð°Ñ‚Ð°Ñ‚ÑŒ ÑÑ‚Ð°Ñ‚Ð¸ÑÑ‚Ð¸ÐºÑƒ Ð·Ð° Ð¾Ð¿Ñ€ÐµÐ´ÐµÐ»Ñ‘Ð½Ð½Ñ‹Ð¹ Ð¼ÐµÑÑÑ†");
+        System.out.println("3. Ð˜Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ñ†ÐµÐ»ÑŒ Ð¿Ð¾ ÐºÐ¾Ð»Ð¸Ñ‡ÐµÑÑ‚Ð²Ñƒ ÑˆÐ°Ð³Ð¾Ð² Ð² Ð´ÐµÐ½ÑŒ");
+        System.out.println("0. Ð’Ñ‹Ð¹Ñ‚Ð¸ Ð¸Ð· Ð¿Ñ€Ð¸Ð»Ð¾Ð¶ÐµÐ½Ð¸Ñ");
+        System.out.println("Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð´ÐµÐ¹ÑÑ‚Ð²Ð¸Ñ: ");
     }
 } 
